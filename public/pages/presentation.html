@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation - AfricaSocial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #f3f4f6;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-indigo-600">AfricaSocial</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-indigo-600">Accueil</a>
+                    <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600">Fonctionnalités</a>
+                    <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600">Tarifs</a>
+                    <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600">Ressources</a>
+                    <a href="/pages/ai-agent.html" class="text-gray-600 hover:text-indigo-600">Agent AI</a>
+                    <a href="/pages/contact.html" class="text-gray-600 hover:text-indigo-600">Contact</a>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="/pages/login.html" class="text-gray-600 hover:text-indigo-600">Connexion</a>
+                    <a href="/pages/signup.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Essai Gratuit</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Découvrez AfricaSocial</h1>
+            <p class="text-xl mb-8">La solution complète pour gérer vos réseaux sociaux en Afrique</p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="video-container mb-8">
+                    <!-- Remplacez l'URL de la vidéo par celle de votre choix -->
+                    <iframe src="https://www.youtube.com/embed/votre_video_id" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Pourquoi AfricaSocial ?</h2>
+                    <p class="text-gray-600">Découvrez comment AfricaSocial peut transformer votre présence sur les réseaux sociaux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Fonctionnalités Principales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mode faible connexion -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-indigo-600 text-3xl mb-4">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Mode faible connexion</h3>
+                    <p class="text-gray-600">Optimisé pour les connexions internet instables en Afrique</p>
+                </div>
+
+                <!-- Multilingue -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-indigo-600 text-3xl mb-4">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Multilingue</h3>
+                    <p class="text-gray-600">Support des langues locales africaines</p>
+                </div>
+
+                <!-- IA intégrée -->
+                <div class="feature-card bg-white p-6 rounded-xl shadow-sm">
+                    <div class="text-indigo-600 text-3xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">IA intégrée</h3>
+                    <p class="text-gray-600">Assistant intelligent pour vos publications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Avantages pour votre Business</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Gain de Temps</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Planification automatique des publications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Gestion centralisée de tous vos réseaux</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Réponses automatiques aux commentaires</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4">Croissance</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Analytics détaillés de performance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Suggestions de contenu optimisé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Adaptation aux marchés locaux</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à transformer votre présence sociale ?</h2>
+            <p class="text-xl mb-8">Commencez votre essai gratuit aujourd'hui</p>
+            <a href="/pages/signup.html" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                Commencer Maintenant
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AfricaSocial</h3>
+                    <p class="text-gray-400">La solution de gestion de réseaux sociaux adaptée au contexte africain.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Produit</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/features.html" class="text-gray-400 hover:text-white">Fonctionnalités</a></li>
+                        <li><a href="/pages/pricing.html" class="text-gray-400 hover:text-white">Tarifs</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Ressources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">contact@africasocial.com</li>
+                        <li class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AfricaSocial. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

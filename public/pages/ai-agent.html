@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent AI - AfricaSocial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .ai-demo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-indigo-600">AfricaSocial</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-indigo-600">Accueil</a>
+                    <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600">Fonctionnalités</a>
+                    <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600">Tarifs</a>
+                    <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600">Ressources</a>
+                    <a href="/pages/ai-agent.html" class="text-indigo-600 font-semibold">Agent AI</a>
+                    <a href="/pages/contact.html" class="text-gray-600 hover:text-indigo-600">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/pages/login.html" class="text-gray-600 hover:text-indigo-600">Connexion</a>
+                    <a href="/pages/signup.html" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Essai Gratuit</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Votre Assistant IA Personnel</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Optimisez votre gestion de contenu avec notre agent IA intelligent, disponible 24/7 pour vous aider.</p>
+            <a href="#demo" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">Essayer la démo</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Capacités de l'Agent IA</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-indigo-600 text-3xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Analyse de Contenu</h3>
+                    <p class="text-gray-600">Analyse intelligente de vos publications pour optimiser leur impact et leur engagement.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-indigo-600 text-3xl mb-4">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Réponses Automatisées</h3>
+                    <p class="text-gray-600">Gestion intelligente des commentaires et messages avec des réponses personnalisées.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-indigo-600 text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Suggestions de Contenu</h3>
+                    <p class="text-gray-600">Recommandations personnalisées basées sur les tendances et votre audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 ai-demo text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Essayez l'Agent IA</h2>
+            <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-lg rounded-lg p-8">
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">Votre question</label>
+                    <textarea class="w-full p-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70" rows="3" placeholder="Posez votre question à l'agent IA..."></textarea>
+                </div>
+                <button class="w-full bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+                    Envoyer
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Intégration Simple</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Connectez-vous en quelques clics</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Configuration automatique avec vos réseaux sociaux</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Personnalisation des réponses et du ton</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Tableau de bord intuitif pour le suivi</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <img src="/images/ai-integration.svg" alt="Intégration IA" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à transformer votre gestion de contenu ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Commencez votre essai gratuit de 14 jours et découvrez la puissance de l'IA.</p>
+            <a href="/pages/signup.html" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">Commencer Maintenant</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AfricaSocial</h3>
+                    <p class="text-gray-400">La solution de gestion de contenu social media adaptée au contexte africain.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Produit</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/features.html" class="text-gray-400 hover:text-white">Fonctionnalités</a></li>
+                        <li><a href="/pages/pricing.html" class="text-gray-400 hover:text-white">Tarifs</a></li>
+                        <li><a href="/pages/ai-agent.html" class="text-gray-400 hover:text-white">Agent IA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ressources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Webinaires</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Douala, Cameroun</li>
+                        <li><a href="mailto:contact@africasocial.com" class="text-gray-400 hover:text-white">contact@africasocial.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AfricaSocial. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
