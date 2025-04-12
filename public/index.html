@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfricaSocial - Plateforme de Gestion des Réseaux Sociaux</title>
+    <title>AfricaSocial - Gestion de Contenu Social Media</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --primary-color: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary-color: #7C3AED;
+            --accent-color: #F59E0B;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
         /* Animations globales */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -29,7 +69,7 @@
             width: 100%;
             overflow: auto;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-            border-radius: 12px;
+            border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
@@ -47,7 +87,7 @@
         
         .flowchart-node {
             position: absolute;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -111,6 +151,8 @@
             transition: all 0.3s ease;
             opacity: 0;
             animation: fadeIn 0.5s ease-out forwards;
+            border-radius: 16px;
+            overflow: hidden;
         }
         
         .platform-card:hover {
@@ -121,6 +163,8 @@
         .dashboard-card {
             border-left: 4px solid;
             transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
         }
         
         .dashboard-card:hover {
@@ -130,18 +174,22 @@
         
         /* Améliorations des boutons */
         .btn-primary {
-            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             transition: all 0.3s ease;
+            border-radius: 9999px;
+            font-weight: 600;
         }
         
         .btn-primary:hover {
-            background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
         }
         
         .btn-secondary {
             transition: all 0.3s ease;
+            border-radius: 9999px;
+            font-weight: 600;
         }
         
         .btn-secondary:hover {
@@ -152,6 +200,8 @@
         /* Améliorations du header */
         .header-shadow {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
         }
         
         /* Améliorations des sections */
@@ -160,7 +210,7 @@
         }
         
         .cta-gradient {
-            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
         
         /* Améliorations du footer */
@@ -172,282 +222,332 @@
         .transition-all {
             transition: all 0.3s ease;
         }
+        
+        /* Nouveaux styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .mobile-menu:not(.active) {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
     <!-- Header -->
-    <header class="bg-white header-shadow sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center mr-3">
-                    <i class="fas fa-globe-africa text-white"></i>
+    <header class="header-shadow fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <a href="/" class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-globe-africa text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-800">AfricaSocial</span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600 font-medium">Fonctionnalités</a>
+                        <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600 font-medium">Tarifs</a>
+                        <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600 font-medium">Ressources</a>
+                        <a href="/pages/ai-agent.html" class="text-gray-600 hover:text-indigo-600 font-medium">Agent AI</a>
+                        <a href="/pages/contact.html" class="text-gray-600 hover:text-indigo-600 font-medium">Contact</a>
+                    </div>
                 </div>
-                <h1 class="text-2xl font-bold text-gray-800">AfricaSocial</h1>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/pages/login.html" class="text-gray-600 hover:text-indigo-600 font-medium">Connexion</a>
+                    <a href="/pages/trial.html" class="btn-primary text-white px-6 py-2">Essai Gratuit</a>
+                </div>
+                <button class="md:hidden text-gray-600 focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="/" class="text-indigo-600 font-semibold">Accueil</a>
-                <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600">Fonctionnalités</a>
-                <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600">Tarifs</a>
-                <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600">Ressources</a>
-                <a href="/pages/ai-agent.html" class="text-gray-600 hover:text-indigo-600">Agent AI</a>
-                <a href="/pages/contact.html" class="text-gray-600 hover:text-indigo-600">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <button class="px-4 py-2 rounded-md text-indigo-600 border border-indigo-600 hover:bg-indigo-50 transition-all">
-                    Connexion
-                </button>
-                <button class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-all">
-                    Essai Gratuit
-                </button>
-                <button class="md:hidden text-gray-600">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-white py-4 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600 font-medium">Fonctionnalités</a>
+                <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600 font-medium">Tarifs</a>
+                <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600 font-medium">Ressources</a>
+                <a href="/pages/ai-agent.html" class="text-gray-600 hover:text-indigo-600 font-medium">Agent AI</a>
+                <a href="/pages/contact.html" class="text-gray-600 hover:text-indigo-600 font-medium">Contact</a>
+                <div class="pt-4 border-t border-gray-200 flex flex-col space-y-4">
+                    <a href="/pages/login.html" class="text-gray-600 hover:text-indigo-600 font-medium">Connexion</a>
+                    <a href="/pages/trial.html" class="btn-primary text-white px-6 py-2 text-center">Essai Gratuit</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="section-gradient py-16">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                    Gestion des réseaux sociaux <span class="text-indigo-600">adaptée à l'Afrique</span>
-                </h1>
-                <p class="text-lg text-gray-600 mb-8">
-                    AfricaSocial simplifie la gestion de votre présence en ligne avec des outils conçus pour les défis spécifiques des entrepreneurs africains.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button class="btn-primary px-6 py-3 rounded-md text-white flex items-center justify-center">
-                        <i class="fas fa-play-circle mr-2"></i> Voir la démo
-                    </button>
-                    <button class="btn-secondary px-6 py-3 rounded-md bg-white text-indigo-600 border border-indigo-600 flex items-center justify-center">
-                        <i class="fas fa-calendar-alt mr-2"></i> Planifier un appel
-                    </button>
+    <!-- Hero Section avec plus d'espace -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 to-purple-50 hero-pattern">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Gérez vos réseaux sociaux <span class="text-gradient">en toute simplicité</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Planifiez, publiez et analysez vos contenus sur tous vos réseaux sociaux depuis une seule plateforme.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/pages/trial.html" class="btn-primary text-white px-8 py-3 text-center">
+                            Commencer Gratuitement
+                        </a>
+                        <a href="/pages/demo.html" class="btn-secondary border border-indigo-600 text-indigo-600 px-8 py-3 text-center">
+                            Voir la Démo
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center">
+                        <div class="flex -space-x-2">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                        </div>
+                        <p class="ml-4 text-gray-600">Rejoint par <span class="font-semibold">+500 entreprises</span> en Afrique</p>
+                    </div>
                 </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center animate-fade-in delay-200">
-                <img src="https://illustrations.popsy.co/amber/digital-nomad.svg" alt="Social media management" class="w-full max-w-md">
+                <div class="md:w-1/2 animate-fade-in delay-300">
+                    <div class="glass-card p-2">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Dashboard Preview" 
+                             class="rounded-lg shadow-2xl animate-float">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Flowchart Visualization -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Comment AfricaSocial fonctionne</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Notre plateforme connecte tous vos canaux sociaux en un seul endroit, avec des fonctionnalités adaptées aux besoins des entrepreneurs africains.
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fonctionnalités <span class="text-gradient">Principales</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tout ce dont vous avez besoin pour gérer efficacement vos réseaux sociaux
                 </p>
             </div>
-            
-            <div class="flowchart-container mb-12 animate-fade-in delay-200">
-                <div class="flowchart" id="flowchart">
-                    <!-- Nodes will be positioned here by JavaScript -->
-                </div>
-            </div>
-            
-            <div class="flex justify-center animate-fade-in delay-300">
-                <button id="animateBtn" class="btn-primary px-6 py-3 rounded-md text-white flex items-center">
-                    <i class="fas fa-magic mr-2"></i> Visualiser les connexions
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features -->
-    <section class="py-16 section-gradient">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Fonctionnalités clés</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Conçues spécifiquement pour répondre aux défis des entrepreneurs africains
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all animate-fade-in delay-100">
-                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-mobile-alt text-blue-600 text-xl"></i>
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-fade-in delay-100">
+                    <div class="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-indigo-600 text-xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Mode faible connexion</h3>
                     <p class="text-gray-600">
-                        Fonctionnalité optimisée pour les zones avec une connexion internet instable ou limitée.
+                        Optimisé pour les zones avec une connexion internet instable. Fonctionne même hors ligne.
                     </p>
                 </div>
-                
+
                 <!-- Feature 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all animate-fade-in delay-200">
-                    <div class="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-language text-indigo-600 text-xl"></i>
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-fade-in delay-200">
+                    <div class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-language text-purple-600 text-xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Multilingue</h3>
                     <p class="text-gray-600">
                         Interface disponible en français et bientôt dans plusieurs langues locales africaines.
                     </p>
                 </div>
-                
+
                 <!-- Feature 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all animate-fade-in delay-300">
-                    <div class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mb-6">
-                        <i class="fas fa-coins text-purple-600 text-xl"></i>
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-fade-in delay-300">
+                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-blue-600 text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Tarification adaptée</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Analytics avancés</h3>
                     <p class="text-gray-600">
-                        Modèle freemium avec des options de paiement flexibles adaptées aux réalités économiques.
+                        Suivez vos performances avec des analyses détaillées et des rapports personnalisés.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-fade-in delay-400">
+                    <div class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">IA intégrée</h3>
+                    <p class="text-gray-600">
+                        Utilisez l'intelligence artificielle pour optimiser vos publications et votre engagement.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-fade-in delay-500">
+                    <div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Planification</h3>
+                    <p class="text-gray-600">
+                        Planifiez vos publications à l'avance et automatisez votre présence en ligne.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-fade-in delay-500">
+                    <div class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Gestion des commentaires</h3>
+                    <p class="text-gray-600">
+                        Gérez facilement les commentaires et messages de tous vos réseaux sociaux.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Platform Integration -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Intégrations avec les plateformes populaires</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Gérer toutes vos plateformes sociales depuis un seul tableau de bord
+    <!-- Integration Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Intégrations <span class="text-gradient">Populaires</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Connectez-vous avec vos plateformes sociales préférées
                 </p>
             </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-                <!-- WhatsApp -->
-                <div class="platform-card bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center delay-100">
-                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                        <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-800">WhatsApp Business</h3>
-                </div>
-                
-                <!-- Instagram -->
-                <div class="platform-card bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center delay-200">
-                    <div class="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mb-4">
-                        <i class="fab fa-instagram text-pink-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-800">Instagram</h3>
-                </div>
-                
-                <!-- Facebook -->
-                <div class="platform-card bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center delay-300">
-                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                        <i class="fab fa-facebook text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-800">Facebook</h3>
-                </div>
-                
-                <!-- YouTube -->
-                <div class="platform-card bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center delay-400">
-                    <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-4">
-                        <i class="fab fa-youtube text-red-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-800">YouTube</h3>
-                </div>
-                
-                <!-- TikTok -->
-                <div class="platform-card bg-white p-6 rounded-xl border border-gray-200 flex flex-col items-center delay-500">
-                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-4">
-                        <i class="fab fa-tiktok text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-800">TikTok</h3>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <a href="https://www.facebook.com/login" target="_blank" class="platform-card bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all">
+                    <i class="fab fa-facebook text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-medium">Facebook</h3>
+                </a>
+                <a href="https://www.instagram.com/accounts/login" target="_blank" class="platform-card bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all">
+                    <i class="fab fa-instagram text-4xl text-pink-600 mb-4"></i>
+                    <h3 class="text-lg font-medium">Instagram</h3>
+                </a>
+                <a href="https://twitter.com/i/flow/login" target="_blank" class="platform-card bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all">
+                    <i class="fab fa-twitter text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-lg font-medium">X (Twitter)</h3>
+                </a>
+                <a href="https://www.linkedin.com/login" target="_blank" class="platform-card bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all">
+                    <i class="fab fa-linkedin text-4xl text-blue-700 mb-4"></i>
+                    <h3 class="text-lg font-medium">LinkedIn</h3>
+                </a>
+                <a href="https://accounts.google.com/signin" target="_blank" class="platform-card bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all">
+                    <i class="fab fa-youtube text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-lg font-medium">YouTube</h3>
+                </a>
+                <a href="https://business.whatsapp.com/" target="_blank" class="platform-card bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition-all">
+                    <i class="fab fa-whatsapp text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-lg font-medium">WhatsApp Business</h3>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Dashboard Preview -->
-    <section class="py-16 section-gradient">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tableau de bord simplifié</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Une interface intuitive conçue pour les entrepreneurs avec des fonctionnalités essentielles
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ce que disent <span class="text-gradient">nos clients</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez comment AfricaSocial aide les entreprises africaines à se développer
                 </p>
             </div>
-            
-            <div class="bg-white rounded-xl shadow-md overflow-hidden animate-fade-in delay-200">
-                <div class="p-4 bg-gray-100 border-b border-gray-200 flex items-center">
-                    <div class="flex space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="ml-4 text-sm text-gray-600">Tableau de bord AfricaSocial</div>
-                </div>
-                <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Stats Card 1 -->
-                    <div class="dashboard-card bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <p class="text-sm text-blue-800">Nouveaux abonnés</p>
-                                <h3 class="text-2xl font-bold text-gray-800 mt-1">1,248</h3>
-                                <p class="text-xs text-blue-600 mt-2"><span class="text-green-500">↑ 12%</span> vs mois dernier</p>
-                            </div>
-                            <div class="bg-blue-100 p-2 rounded-lg">
-                                <i class="fas fa-users text-blue-600"></i>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Aminata Diallo</h4>
+                            <p class="text-gray-600 text-sm">Directrice Marketing, Dakar</p>
                         </div>
                     </div>
-                    
-                    <!-- Stats Card 2 -->
-                    <div class="dashboard-card bg-purple-50 border-l-4 border-purple-500 p-5 rounded-lg">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <p class="text-sm text-purple-800">Engagement</p>
-                                <h3 class="text-2xl font-bold text-gray-800 mt-1">4.8%</h3>
-                                <p class="text-xs text-purple-600 mt-2"><span class="text-green-500">↑ 3.2%</span> vs mois dernier</p>
-                            </div>
-                            <div class="bg-purple-100 p-2 rounded-lg">
-                                <i class="fas fa-heart text-purple-600"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Stats Card 3 -->
-                    <div class="dashboard-card bg-green-50 border-l-4 border-green-500 p-5 rounded-lg">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <p class="text-sm text-green-800">Messages reçus</p>
-                                <h3 class="text-2xl font-bold text-gray-800 mt-1">328</h3>
-                                <p class="text-xs text-green-600 mt-2"><span class="text-red-500">↓ 5%</span> vs mois dernier</p>
-                            </div>
-                            <div class="bg-green-100 p-2 rounded-lg">
-                                <i class="fas fa-comments text-green-600"></i>
-                            </div>
-                        </div>
+                    <p class="text-gray-600 mb-4">
+                        "AfricaSocial a complètement transformé notre stratégie de communication. Nous avons augmenté notre engagement de 45% en seulement 3 mois."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
-                
-                <!-- Chart -->
-                <div class="p-6">
-                    <canvas id="performanceChart" height="250"></canvas>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Kwame Mensah</h4>
+                            <p class="text-gray-600 text-sm">Fondateur, Accra</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Le mode faible connexion est un véritable atout pour notre équipe. Nous pouvons travailler efficacement même avec une connexion instable."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Fatima Ouedraogo</h4>
+                            <p class="text-gray-600 text-sm">Responsable Communication, Ouagadougou</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "L'IA intégrée nous aide à créer du contenu pertinent pour notre audience locale. Un véritable gain de temps pour notre équipe."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 cta-gradient text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6 animate-fade-in">Prêt à simplifier votre gestion des réseaux sociaux ?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto animate-fade-in delay-100">
-                Rejoignez des milliers d'entrepreneurs africains qui utilisent déjà AfricaSocial pour développer leur présence en ligne.
+    <section class="py-20 cta-gradient text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à transformer votre présence sociale ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Commencez votre essai gratuit de 14 jours et découvrez comment AfricaSocial peut transformer votre présence en ligne.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in delay-200">
-                <button class="px-8 py-3 rounded-md bg-white text-indigo-600 font-medium hover:bg-gray-100 transition-all">
-                    Essai gratuit de 14 jours
-                </button>
-                <button class="px-8 py-3 rounded-md border border-white text-white hover:bg-white hover:bg-opacity-10 transition-all">
-                    Voir les tarifs
-                </button>
-            </div>
+            <a href="/pages/trial.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 inline-block">
+                Commencer Maintenant
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer-gradient text-white py-12">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center mb-4">
@@ -464,17 +564,17 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Produit</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Fonctionnalités</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Tarifs</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Intégrations</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Mises à jour</a></li>
+                        <li><a href="/pages/features.html" class="text-gray-400 hover:text-white transition-all">Fonctionnalités</a></li>
+                        <li><a href="/pages/pricing.html" class="text-gray-400 hover:text-white transition-all">Tarifs</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white transition-all">Ressources</a></li>
+                        <li><a href="/pages/ai-agent.html" class="text-gray-400 hover:text-white transition-all">Agent AI</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Ressources</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-all">Documentation</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-all">Guides</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-all">Support</a></li>
@@ -492,7 +592,7 @@
             </div>
             
             <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 AfricaSocial. Tous droits réservés.</p>
+                <p class="text-gray-400 mb-4 md:mb-0">© 2024 AfricaSocial. Tous droits réservés.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
@@ -504,451 +604,11 @@
     </footer>
 
     <script>
-        // Initialize the flowchart
-        document.addEventListener('DOMContentLoaded', function() {
-            const flowchart = document.getElementById('flowchart');
-            
-            // Define nodes with their positions and styles
-            const nodes = [
-                // Main Platform
-                {
-                    id: 'plateforme',
-                    title: 'AfricaSocial',
-                    icon: 'fas fa-globe-africa',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '220px',
-                    height: '120px',
-                    bgColor: 'bg-white',
-                    textColor: 'text-gray-800',
-                    borderColor: 'border-gray-300'
-                },
-                
-                // User Interface
-                {
-                    id: 'interface',
-                    title: 'Interface Utilisateur',
-                    icon: 'fas fa-desktop',
-                    top: '20%',
-                    left: '25%',
-                    width: '200px',
-                    height: '180px',
-                    bgColor: 'bg-blue-50',
-                    textColor: 'text-blue-800',
-                    borderColor: 'border-blue-200'
-                },
-                
-                // Features
-                {
-                    id: 'features',
-                    title: 'Fonctionnalités Centrales',
-                    icon: 'fas fa-cogs',
-                    top: '50%',
-                    left: '25%',
-                    width: '200px',
-                    height: '180px',
-                    bgColor: 'bg-orange-50',
-                    textColor: 'text-orange-800',
-                    borderColor: 'border-orange-200'
-                },
-                
-                // Local Adaptations
-                {
-                    id: 'adaptations',
-                    title: 'Adaptations Locales',
-                    icon: 'fas fa-map-marker-alt',
-                    top: '80%',
-                    left: '25%',
-                    width: '200px',
-                    height: '180px',
-                    bgColor: 'bg-green-50',
-                    textColor: 'text-green-800',
-                    borderColor: 'border-green-200'
-                },
-                
-                // Connected Platforms
-                {
-                    id: 'platforms',
-                    title: 'Plateformes Connectées',
-                    icon: 'fas fa-share-alt',
-                    top: '50%',
-                    left: '80%',
-                    width: '220px',
-                    height: '180px',
-                    bgColor: 'bg-purple-50',
-                    textColor: 'text-purple-800',
-                    borderColor: 'border-purple-200'
-                },
-                
-                // Users
-                {
-                    id: 'users',
-                    title: 'Utilisateurs',
-                    icon: 'fas fa-users',
-                    top: '20%',
-                    left: '75%',
-                    width: '200px',
-                    height: '180px',
-                    bgColor: 'bg-indigo-50',
-                    textColor: 'text-indigo-800',
-                    borderColor: 'border-indigo-200'
-                },
-                
-                // Sub-nodes for Interface
-                {
-                    id: 'dashboard',
-                    title: 'Tableau de Bord',
-                    icon: 'fas fa-chart-pie',
-                    top: '15%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-blue-100',
-                    textColor: 'text-blue-900',
-                    borderColor: 'border-blue-300',
-                    parent: 'interface'
-                },
-                {
-                    id: 'navigation',
-                    title: 'Navigation Simplifiée',
-                    icon: 'fas fa-compass',
-                    top: '40%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-blue-100',
-                    textColor: 'text-blue-900',
-                    borderColor: 'border-blue-300',
-                    parent: 'interface'
-                },
-                {
-                    id: 'mobile',
-                    title: 'Mode Mobile',
-                    icon: 'fas fa-mobile-alt',
-                    top: '65%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-blue-100',
-                    textColor: 'text-blue-900',
-                    borderColor: 'border-blue-300',
-                    parent: 'interface'
-                },
-                
-                // Sub-nodes for Features
-                {
-                    id: 'api',
-                    title: 'Connecteurs API',
-                    icon: 'fas fa-plug',
-                    top: '35%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-orange-100',
-                    textColor: 'text-orange-900',
-                    borderColor: 'border-orange-300',
-                    parent: 'features'
-                },
-                {
-                    id: 'analytics',
-                    title: 'Analytique Simplifiée',
-                    icon: 'fas fa-chart-line',
-                    top: '65%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-orange-100',
-                    textColor: 'text-orange-900',
-                    borderColor: 'border-orange-300',
-                    parent: 'features'
-                },
-                
-                // Sub-nodes for Adaptations
-                {
-                    id: 'language',
-                    title: 'Multilingue',
-                    icon: 'fas fa-language',
-                    top: '70%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-green-100',
-                    textColor: 'text-green-900',
-                    borderColor: 'border-green-300',
-                    parent: 'adaptations'
-                },
-                {
-                    id: 'pricing',
-                    title: 'Tarification Adaptée',
-                    icon: 'fas fa-tags',
-                    top: '90%',
-                    left: '15%',
-                    width: '160px',
-                    height: '100px',
-                    bgColor: 'bg-green-100',
-                    textColor: 'text-green-900',
-                    borderColor: 'border-green-300',
-                    parent: 'adaptations'
-                },
-                
-                // Sub-nodes for Platforms
-                {
-                    id: 'whatsapp',
-                    title: 'WhatsApp',
-                    icon: 'fab fa-whatsapp',
-                    top: '35%',
-                    left: '85%',
-                    width: '160px',
-                    height: '80px',
-                    bgColor: 'bg-purple-100',
-                    textColor: 'text-purple-900',
-                    borderColor: 'border-purple-300',
-                    parent: 'platforms'
-                },
-                {
-                    id: 'instagram',
-                    title: 'Instagram',
-                    icon: 'fab fa-instagram',
-                    top: '50%',
-                    left: '85%',
-                    width: '160px',
-                    height: '80px',
-                    bgColor: 'bg-purple-100',
-                    textColor: 'text-purple-900',
-                    borderColor: 'border-purple-300',
-                    parent: 'platforms'
-                },
-                {
-                    id: 'facebook',
-                    title: 'Facebook',
-                    icon: 'fab fa-facebook',
-                    top: '65%',
-                    left: '85%',
-                    width: '160px',
-                    height: '80px',
-                    bgColor: 'bg-purple-100',
-                    textColor: 'text-purple-900',
-                    borderColor: 'border-purple-300',
-                    parent: 'platforms'
-                },
-                
-                // Sub-nodes for Users
-                {
-                    id: 'commerce',
-                    title: 'Petit Commerce',
-                    icon: 'fas fa-store',
-                    top: '15%',
-                    left: '85%',
-                    width: '160px',
-                    height: '80px',
-                    bgColor: 'bg-indigo-100',
-                    textColor: 'text-indigo-900',
-                    borderColor: 'border-indigo-300',
-                    parent: 'users'
-                },
-                {
-                    id: 'entrepreneur',
-                    title: 'Entrepreneur',
-                    icon: 'fas fa-user-tie',
-                    top: '40%',
-                    left: '85%',
-                    width: '160px',
-                    height: '80px',
-                    bgColor: 'bg-indigo-100',
-                    textColor: 'text-indigo-900',
-                    borderColor: 'border-indigo-300',
-                    parent: 'users'
-                }
-            ];
-            
-            // Create nodes with staggered animation
-            nodes.forEach((node, index) => {
-                setTimeout(() => {
-                    const nodeElement = document.createElement('div');
-                    nodeElement.className = `flowchart-node border ${node.borderColor} ${node.bgColor} ${node.textColor}`;
-                    nodeElement.style.width = node.width;
-                    nodeElement.style.height = node.height;
-                    nodeElement.style.top = node.top;
-                    nodeElement.style.left = node.left;
-                    if (node.transform) nodeElement.style.transform = node.transform;
-                    nodeElement.id = node.id;
-                    
-                    nodeElement.innerHTML = `
-                        <div class="node-icon ${node.textColor}">
-                            <i class="${node.icon}"></i>
-                        </div>
-                        <div class="font-medium text-center">${node.title}</div>
-                    `;
-                    
-                    flowchart.appendChild(nodeElement);
-                }, index * 50); // Stagger the animation
-            });
-            
-            // Define connections
-            const connections = [
-                // Main platform to sections
-                { from: 'plateforme', to: 'interface' },
-                { from: 'plateforme', to: 'features' },
-                { from: 'plateforme', to: 'adaptations' },
-                { from: 'plateforme', to: 'platforms' },
-                { from: 'plateforme', to: 'users' },
-                
-                // Interface sub-nodes
-                { from: 'interface', to: 'dashboard' },
-                { from: 'interface', to: 'navigation' },
-                { from: 'interface', to: 'mobile' },
-                
-                // Features sub-nodes
-                { from: 'features', to: 'api' },
-                { from: 'features', to: 'analytics' },
-                { from: 'api', to: 'analytics' },
-                
-                // Adaptations sub-nodes
-                { from: 'adaptations', to: 'language' },
-                { from: 'adaptations', to: 'pricing' },
-                
-                // Platforms sub-nodes
-                { from: 'platforms', to: 'whatsapp' },
-                { from: 'platforms', to: 'instagram' },
-                { from: 'platforms', to: 'facebook' },
-                
-                // Users sub-nodes
-                { from: 'users', to: 'commerce' },
-                { from: 'users', to: 'entrepreneur' },
-                
-                // API to platforms
-                { from: 'api', to: 'whatsapp' },
-                { from: 'api', to: 'instagram' },
-                { from: 'api', to: 'facebook' },
-                
-                // Users to dashboard
-                { from: 'commerce', to: 'dashboard' },
-                { from: 'entrepreneur', to: 'dashboard' }
-            ];
-            
-            // Create connections with staggered animation
-            setTimeout(() => {
-                connections.forEach((conn, index) => {
-                    setTimeout(() => {
-                        createConnection(conn.from, conn.to);
-                    }, index * 30);
-                });
-            }, nodes.length * 50 + 500);
-            
-            // Animate button
-            document.getElementById('animateBtn').addEventListener('click', function() {
-                // Highlight main platform
-                const platform = document.getElementById('plateforme');
-                platform.classList.add('highlight');
-                
-                // Animate connections
-                setTimeout(() => {
-                    document.querySelectorAll('.flowchart-connector, .flowchart-arrow').forEach(el => {
-                        el.style.transition = 'all 0.5s ease';
-                        el.style.opacity = '1';
-                    });
-                    
-                    // Remove highlight after animation
-                    setTimeout(() => {
-                        platform.classList.remove('highlight');
-                    }, 2000);
-                }, 500);
-            });
-            
-            // Initialize chart
-            const ctx = document.getElementById('performanceChart').getContext('2d');
-            const chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil'],
-                    datasets: [
-                        {
-                            label: 'Abonnés',
-                            data: [1200, 1900, 1700, 2100, 2300, 2500, 3000],
-                            borderColor: '#4f46e5',
-                            backgroundColor: 'rgba(79, 70, 229, 0.05)',
-                            tension: 0.3,
-                            fill: true
-                        },
-                        {
-                            label: 'Engagement',
-                            data: [3.2, 3.8, 4.1, 4.5, 4.3, 4.7, 5.0],
-                            borderColor: '#10b981',
-                            backgroundColor: 'rgba(16, 185, 129, 0.05)',
-                            tension: 0.3,
-                            fill: true
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            ticks: {
-                                callback: function(value) {
-                                    return this.getLabelForValue(value) + (this.scale.id === 'y' ? '%' : '');
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
         });
-        
-        function createConnection(fromId, toId) {
-            const flowchart = document.getElementById('flowchart');
-            const fromElement = document.getElementById(fromId);
-            const toElement = document.getElementById(toId);
-            
-            if (!fromElement || !toElement) return;
-            
-            // Get positions
-            const fromRect = fromElement.getBoundingClientRect();
-            const toRect = toElement.getBoundingClientRect();
-            const flowchartRect = flowchart.getBoundingClientRect();
-            
-            // Calculate positions relative to flowchart
-            const fromLeft = fromRect.left - flowchartRect.left + fromRect.width / 2;
-            const fromTop = fromRect.top - flowchartRect.top + fromRect.height / 2;
-            const toLeft = toRect.left - flowchartRect.left + toRect.width / 2;
-            const toTop = toRect.top - flowchartRect.top + toRect.height / 2;
-            
-            // Calculate distance and angle
-            const dx = toLeft - fromLeft;
-            const dy = toTop - fromTop;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-            
-            // Create connector line
-            const connector = document.createElement('div');
-            connector.className = 'flowchart-connector';
-            connector.style.width = `${distance}px`;
-            connector.style.left = `${fromLeft}px`;
-            connector.style.top = `${fromTop}px`;
-            connector.style.transform = `rotate(${angle}deg)`;
-            connector.style.opacity = '0';
-            flowchart.appendChild(connector);
-            
-            // Create arrow
-            const arrow = document.createElement('div');
-            arrow.className = 'flowchart-arrow';
-            arrow.style.left = `${toLeft - 10}px`;
-            arrow.style.top = `${toTop}px`;
-            arrow.style.transform = `rotate(${angle}deg)`;
-            arrow.style.opacity = '0';
-            flowchart.appendChild(arrow);
-        }
     </script>
 </body>
 </html> 
