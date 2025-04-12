@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AfricaSocial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center mr-3">
+                        <i class="fas fa-globe-africa text-white"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">AfricaSocial</h1>
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="/" class="text-gray-600 hover:text-indigo-600 transition-all">Accueil</a>
+                <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600 transition-all">Fonctionnalités</a>
+                <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600 transition-all">Tarifs</a>
+                <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600 transition-all">Ressources</a>
+                <a href="/pages/contact.html" class="text-indigo-600 font-medium">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 rounded-md text-indigo-600 border border-indigo-600 hover:bg-indigo-50 transition-all">
+                    Connexion
+                </button>
+                <button class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-all">
+                    Essai Gratuit
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-fade-in">
+                    Contactez <span class="text-indigo-600">AfricaSocial</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 animate-fade-in">
+                    Notre équipe est là pour répondre à toutes vos questions et vous accompagner dans votre réussite
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Email Support -->
+                <div class="contact-card bg-white p-8 rounded-xl shadow-sm animate-fade-in">
+                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Support Email</h3>
+                    <p class="text-gray-600 mb-4">
+                        Notre équipe de support répond sous 24 heures ouvrées.
+                    </p>
+                    <a href="mailto:support@africasocial.com" class="text-indigo-600 hover:text-indigo-700 font-medium">
+                        support@africasocial.com
+                    </a>
+                </div>
+
+                <!-- Phone Support -->
+                <div class="contact-card bg-white p-8 rounded-xl shadow-sm animate-fade-in">
+                    <div class="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-phone-alt text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Support Téléphonique</h3>
+                    <p class="text-gray-600 mb-4">
+                        Disponible du lundi au vendredi, 9h-18h (GMT+1).
+                    </p>
+                    <a href="tel:+237697826718" class="text-indigo-600 hover:text-indigo-700 font-medium">
+                        +237 6 978 267 18
+                    </a>
+                </div>
+
+                <!-- Live Chat -->
+                <div class="contact-card bg-white p-8 rounded-xl shadow-sm animate-fade-in">
+                    <div class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Chat en Direct</h3>
+                    <p class="text-gray-600 mb-4">
+                        Discutez en temps réel avec notre équipe de support.
+                    </p>
+                    <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-all">
+                        Démarrer le chat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Envoyez-nous un message</h2>
+                    <p class="text-lg text-gray-600">
+                        Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                                <input type="text" id="lastName" name="lastName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="support">Support technique</option>
+                                <option value="billing">Facturation</option>
+                                <option value="partnership">Partenariat</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="privacy" name="privacy" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" required>
+                            <label for="privacy" class="ml-2 block text-sm text-gray-700">
+                                J'accepte que mes données soient traitées conformément à la <a href="#" class="text-indigo-600 hover:text-indigo-700">politique de confidentialité</a>
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-all">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Questions fréquentes</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Trouvez rapidement des réponses aux questions les plus courantes
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Comment puis-je annuler mon abonnement ?</h3>
+                    <p class="text-gray-600">
+                        Vous pouvez annuler votre abonnement à tout moment depuis votre tableau de bord. Aucun frais supplémentaire ne vous sera facturé après l'annulation.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Quels sont vos délais de réponse ?</h3>
+                    <p class="text-gray-600">
+                        Nous nous efforçons de répondre à toutes les demandes dans un délai de 24 heures ouvrées. Pour les questions urgentes, nous vous recommandons d'utiliser notre chat en direct.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Proposez-vous des formations personnalisées ?</h3>
+                    <p class="text-gray-600">
+                        Oui, nous proposons des sessions de formation personnalisées pour les équipes. Contactez-nous pour discuter de vos besoins spécifiques.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nos bureaux</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Rencontrez notre équipe dans l'une de nos agences
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Douala Office -->
+                <div class="bg-white p-6 rounded-xl shadow-sm animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Douala</h3>
+                            <p class="text-sm text-gray-500">Siège social</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Akwa, Boulevard de la Joie<br>
+                        Douala, Cameroun
+                    </p>
+                    <a href="https://maps.google.com" target="_blank" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Voir sur Google Maps <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Yaoundé Office -->
+                <div class="bg-white p-6 rounded-xl shadow-sm animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Yaoundé</h3>
+                            <p class="text-sm text-gray-500">Agence régionale</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Centre-ville, Avenue Kennedy<br>
+                        Yaoundé, Cameroun
+                    </p>
+                    <a href="https://maps.google.com" target="_blank" class="text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        Voir sur Google Maps <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-sm">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Restez informé</h3>
+                    <p class="text-gray-600">
+                        Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et mises à jour
+                    </p>
+                </div>
+                
+                <form id="newsletterForm" class="space-y-6">
+                    <div>
+                        <input 
+                            type="email" 
+                            placeholder="Votre email professionnel" 
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                            required
+                        />
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="weeklyUpdates" checked class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                            <span class="ml-2 text-gray-700">Mises à jour hebdomadaires</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="productNews" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                            <span class="ml-2 text-gray-700">Nouvelles fonctionnalités</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-all">
+                        S'abonner
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à commencer ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Rejoignez des milliers d'entrepreneurs africains qui utilisent AfricaSocial pour développer leur présence en ligne.
+            </p>
+            <button class="px-8 py-3 rounded-md bg-white text-indigo-600 font-medium hover:bg-gray-100 transition-all">
+                Essai gratuit de 14 jours
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-globe-africa text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">AfricaSocial</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        La plateforme de gestion des réseaux sociaux conçue pour les entrepreneurs africains.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Produit</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/features.html" class="text-gray-400 hover:text-white transition-all">Fonctionnalités</a></li>
+                        <li><a href="/pages/pricing.html" class="text-gray-400 hover:text-white transition-all">Tarifs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Intégrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Mises à jour</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ressources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> Douala, Cameroun</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-envelope mr-2"></i> contact@africasocial.com</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-phone-alt mr-2"></i> +237 6 978 267 18</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 AfricaSocial. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: this.firstName.value,
+                lastName: this.lastName.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value
+            };
+
+            try {
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Merci pour votre message ! Notre équipe vous répondra dans les plus brefs délais.');
+                    this.reset();
+                } else {
+                    throw new Error(data.error || 'Une erreur est survenue');
+                }
+            } catch (error) {
+                alert('Erreur lors de l\'envoi du message : ' + error.message);
+            }
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                email: e.target.elements[0].value,
+                preferences: {
+                    weeklyUpdates: e.target.weeklyUpdates.checked,
+                    productNews: e.target.productNews.checked
+                }
+            };
+
+            try {
+                const response = await fetch('/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Inscription réussie ! Vérifiez votre email.');
+                    e.target.reset();
+                } else {
+                    throw new Error(data.error || 'Une erreur est survenue');
+                }
+            } catch (error) {
+                alert('Erreur lors de l\'inscription : ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html> 
