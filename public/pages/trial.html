@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essai Gratuit - AfricaSocial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .trial-card {
+            transition: all 0.3s ease;
+        }
+        .trial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .feature-item {
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateX(5px);
+        }
+        .countdown {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4F46E5;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-indigo-600">AfricaSocial</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/pages/features.html" class="text-gray-600 hover:text-indigo-600">Fonctionnalités</a>
+                    <a href="/pages/pricing.html" class="text-gray-600 hover:text-indigo-600">Tarifs</a>
+                    <a href="/pages/resources.html" class="text-gray-600 hover:text-indigo-600">Ressources</a>
+                    <a href="/pages/ai-agent.html" class="text-gray-600 hover:text-indigo-600">Agent AI</a>
+                    <a href="/pages/contact.html" class="text-gray-600 hover:text-indigo-600">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="bg-indigo-600 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Essai Gratuit de 14 Jours
+                </h1>
+                <p class="text-xl mb-8">
+                    Découvrez toutes les fonctionnalités premium sans engagement
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#create-account" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                        Créer mon compte
+                    </a>
+                    <a href="#features" class="bg-indigo-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-400 transition duration-300">
+                        Voir les fonctionnalités
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trial Benefits Section -->
+    <div id="features" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Ce que vous obtenez pendant 14 jours</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="trial-card bg-white p-6 rounded-lg shadow-md">
+                <div class="text-indigo-600 text-3xl mb-4">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Accès Premium</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Toutes les fonctionnalités Pro
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Analytics avancés
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Planification illimitée
+                    </li>
+                </ul>
+            </div>
+            <div class="trial-card bg-white p-6 rounded-lg shadow-md">
+                <div class="text-indigo-600 text-3xl mb-4">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Support Prioritaire</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Assistance 24/7
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Formation personnalisée
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Accès aux webinaires
+                    </li>
+                </ul>
+            </div>
+            <div class="trial-card bg-white p-6 rounded-lg shadow-md">
+                <div class="text-indigo-600 text-3xl mb-4">
+                    <i class="fas fa-unlock"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Sans Engagement</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Aucune carte de crédit
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Annulation facile
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Conservation des données
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Account Section -->
+    <div id="create-account" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold mb-2">Créez votre compte gratuit</h2>
+                    <p class="text-gray-600">Commencez votre essai de 14 jours dès maintenant</p>
+                </div>
+
+                <!-- Social Login Buttons -->
+                <div class="mb-8">
+                    <div class="flex flex-col space-y-4">
+                        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            <img src="https://www.google.com/favicon.ico" alt="Google" class="h-5 w-5 mr-2">
+                            Continuer avec Google
+                        </button>
+                        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            <i class="fab fa-facebook text-blue-600 h-5 w-5 mr-2"></i>
+                            Continuer avec Facebook
+                        </button>
+                        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            <i class="fab fa-twitter text-blue-400 h-5 w-5 mr-2"></i>
+                            Continuer avec X (Twitter)
+                        </button>
+                        <button type="button" class="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            <i class="fab fa-linkedin text-blue-700 h-5 w-5 mr-2"></i>
+                            Continuer avec LinkedIn
+                        </button>
+                    </div>
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Ou continuez avec email</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Prénom</label>
+                            <input type="text" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Nom</label>
+                            <input type="text" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            placeholder="Votre adresse email">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                        <input type="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nom de l'entreprise</label>
+                        <input type="text" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                        <label class="ml-2 block text-sm text-gray-900">
+                            J'accepte les <a href="#" class="text-indigo-600 hover:text-indigo-500">conditions d'utilisation</a> et la <a href="#" class="text-indigo-600 hover:text-indigo-500">politique de confidentialité</a>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Commencer mon essai gratuit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Ce que nos clients disent</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Client" class="rounded-full mr-4">
+                    <div>
+                        <h4 class="font-semibold">Sarah M.</h4>
+                        <p class="text-gray-600">Directrice Marketing</p>
+                    </div>
+                </div>
+                <p class="text-gray-600">"AfricaSocial a transformé notre gestion des réseaux sociaux. L'interface est intuitive et les fonctionnalités sont exactement ce dont nous avions besoin."</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Client" class="rounded-full mr-4">
+                    <div>
+                        <h4 class="font-semibold">Jean P.</h4>
+                        <p class="text-gray-600">Entrepreneur</p>
+                    </div>
+                </div>
+                <p class="text-gray-600">"L'essai gratuit m'a permis de découvrir toutes les fonctionnalités. J'ai été impressionné par la qualité du support et la facilité d'utilisation."</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/50" alt="Client" class="rounded-full mr-4">
+                    <div>
+                        <h4 class="font-semibold">Marie K.</h4>
+                        <p class="text-gray-600">Community Manager</p>
+                    </div>
+                </div>
+                <p class="text-gray-600">"Les outils d'analyse et de planification sont exceptionnels. AfricaSocial m'a fait gagner un temps précieux dans ma gestion quotidienne."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">AfricaSocial</h3>
+                    <p class="text-gray-400">La solution de gestion de réseaux sociaux pour l'Afrique</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Produit</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/features.html" class="text-gray-400 hover:text-white">Fonctionnalités</a></li>
+                        <li><a href="/pages/pricing.html" class="text-gray-400 hover:text-white">Tarifs</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Ressources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ressources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="/pages/resources.html" class="text-gray-400 hover:text-white">Webinaires</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Douala, Cameroun</li>
+                        <li><a href="mailto:contact@africasocial.com" class="text-gray-400 hover:text-white">contact@africasocial.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AfricaSocial. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
